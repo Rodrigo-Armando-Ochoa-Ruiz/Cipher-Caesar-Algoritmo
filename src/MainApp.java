@@ -19,7 +19,7 @@ public class MainApp {
 
         while (isMenuPrinted){
             try {
-                MainApp.selectOption();
+                MainApp.principalMenu();
                 option= Integer.parseInt(scanner.nextLine());
                 switch (option){
                     case 1, 2:
@@ -46,7 +46,6 @@ public class MainApp {
                 System.out.println("Hasta Luego");
                 isMenuPrinted=false;
             }
-        principalMenu();
         }
 
     }
