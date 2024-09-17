@@ -1,5 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hola");
+        //Impresión de Menú en Consola
+        System.out.println("Bienvenido al Encriptador");
+        MainApp.principalMenu();
     }
 }

@@ -1,3 +1,7 @@
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class Validator {
     private static Validator instance;
     private Validator() {
@@ -9,11 +13,17 @@ public class Validator {
         }
         return instance;
     }
-    public boolean isValidKey(int key, char [] alphabet){
+    public static boolean isValidKey(int key){
+        if (key>0&&key<26){
+            System.out.println("Clave válida");
+            return true;
+        }
+        System.out.println("Clave inválida");
         return false;
     }
 
-    public boolean isFileExists(String filrPath){
-        return false;
+    public static boolean isFileExists(String filePath){
+        Path path = Paths.get(filePath);
+        return Files.exists(path);
     }
 }
