@@ -12,7 +12,7 @@ public class ReaderInputData {
         System.out.println("Ingrese la ruta del archivo fuente");
         String path =scanner.nextLine();
         if (!Validator.isFileExists(path))
-            FileManager.createFile(path);
+            return FileManager.createFile(path);
         this.inputPath= path;
         return true;
     }
@@ -22,10 +22,8 @@ public class ReaderInputData {
         String path = scanner.nextLine();
         if (Validator.isFileExists(path))
             FileManager.deleateFile(path);
-
-        FileManager.createFile(path);
         this.outputPath=path;
-        return true;
+        return FileManager.createFile(path);
     }
 
     public boolean isKeyValid(){
@@ -38,8 +36,6 @@ public class ReaderInputData {
                         this.key=key;
                         isValidKey =true;
                     }
-                    else
-                        System.out.println("Clave no válida");
                 }catch (NumberFormatException e){
                     System.out.println("Ingrese un número entero");
                 }

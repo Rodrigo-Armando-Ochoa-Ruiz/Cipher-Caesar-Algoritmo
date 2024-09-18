@@ -18,7 +18,7 @@ public class Validator {
             System.out.println("Clave válida");
             return true;
         }
-        System.out.println("Clave inválida");
+        System.out.println("Clave inválida, ingrese un número entre 1 y 25");
         return false;
     }
 
