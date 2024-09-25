@@ -19,22 +19,43 @@ public class MenuApp {
                 switch (option){
                     case 1:
                         ReaderInputData toEncryptData =new ReaderInputData();
-                        if (authenticateInputData(toEncryptData))
-                            FileProcess.processInfoByBlock(toEncryptData.getInputPath(),
-                                                           toEncryptData.getOutputPath(),
-                                                           toEncryptData.getKey());
+                        if (authenticateInputData(toEncryptData)){
+                            String toEncrypt=FileManager.read(toEncryptData.getInputPath());
+                            String encryptText=Cipher.encrypt(toEncrypt,toEncryptData.getKey());
+                            FileManager.write(toEncryptData.getOutputPath(),encryptText);
+                        }
                         break;
 
                     case 2:
                         ReaderInputData toDecryptData =new ReaderInputData();
-                        if (authenticateInputData(toDecryptData))
-                            FileProcess.processInfoByBlock(toDecryptData.getInputPath(),
-                                                           toDecryptData.getOutputPath(),
-                                                          -toDecryptData.getKey());
+                        if (authenticateInputData(toDecryptData)){
+                            String toDecrypt=FileManager.read(toDecryptData.getInputPath());
+                            String encryptText=Cipher.decrypt(toDecrypt,-toDecryptData.getKey());
+                            FileManager.write(toDecryptData.getOutputPath(),encryptText);
+                        }
                         break;
 
                     case 3:
+                        BruteForce bruteForce=new BruteForce();
+                        ReaderInputData dataBruteForce=new ReaderInputData();
+
+                        System.out.println("Ingrese la ruta del archivo a desencriptar");
+                        dataBruteForce.setInputPath(scanner.nextLine());
+
+                        System.out.println("Ingrese la ruta del archivo destino");
+                        dataBruteForce.setOutputPath(scanner.nextLine());
+
+                        String partOfText=bruteForce.readText(scanner.nextLine());
+                        dataBruteForce.setKey(bruteForce.getKey(partOfText));
+
+//                        if (dataBruteForce.getKey()==0)
+//                            System.out.println("No se pudo descifrar el archivo");
+//                        else
+//                            FileManager.processInfoByBlock(dataBruteForce.getInputPath(),
+//                                dataBruteForce.getOutputPath(),
+//                                -dataBruteForce.getKey());
                         break;
+
                     case 4:
                         break;
                     default:
