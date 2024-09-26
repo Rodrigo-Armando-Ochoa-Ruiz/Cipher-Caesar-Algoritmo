@@ -36,6 +36,7 @@ public class MenuApp {
                         break;
 
                     case 3:
+
                         BruteForce bruteForce=new BruteForce();
                         ReaderInputData dataBruteForce=new ReaderInputData();
 
@@ -45,15 +46,16 @@ public class MenuApp {
                         System.out.println("Ingrese la ruta del archivo destino");
                         dataBruteForce.setOutputPath(scanner.nextLine());
 
-                        String partOfText=bruteForce.readText(scanner.nextLine());
-                        dataBruteForce.setKey(bruteForce.getKey(partOfText));
-
-//                        if (dataBruteForce.getKey()==0)
-//                            System.out.println("No se pudo descifrar el archivo");
-//                        else
-//                            FileManager.processInfoByBlock(dataBruteForce.getInputPath(),
-//                                dataBruteForce.getOutputPath(),
-//                                -dataBruteForce.getKey());
+                        String textToDecrypt=FileManager.read(dataBruteForce.getInputPath());
+                        int key= bruteForce.getKey(textToDecrypt);
+                        if (key!=0){
+                            System.out.println("Llave encontrada: "+key);
+                            String textDecrypted=Cipher.decrypt(textToDecrypt,-key);
+                            FileManager.write(dataBruteForce.getOutputPath(),textDecrypted);
+                            System.out.println("Archivo Descifrado con éxito");
+                        }
+                        else
+                            System.out.println("Llave no encontrada");
                         break;
 
                     case 4:
