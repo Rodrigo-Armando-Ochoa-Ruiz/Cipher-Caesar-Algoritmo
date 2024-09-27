@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.nio.BufferOverflowException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
@@ -37,13 +38,19 @@ public class FileManager {
     public static String read(String inputPath){
         Path srcPath = Paths.get(inputPath);
 
-        int sizeBuffer = 1024*1024*500;
+        int sizeBuffer = 1024*1024*500;//500MB
         //Definición de canales de entrada y salida de datos
         try (FileChannel inputChannel=FileChannel.open(srcPath, StandardOpenOption.READ)){
-            //if (inputChannel.size()>Integer.MAX_VALUE)
-            //  throw new
-            ByteBuffer byteBufferRead =ByteBuffer.allocate(sizeBuffer); //Definir Buffer de lectura con tamaño de información a procesar
+            //Lanzar Excepción si el archivo supera los 500MB
+            if (inputChannel.size()>sizeBuffer){
+                System.out.println("Tamaño de archivo excedido, pruebe con uno de menor tamaño");
+                throw new BufferOverflowException();
+            }
 
+            //Definir Buffer de lectura con tamaño de información a procesar
+            ByteBuffer byteBufferRead =ByteBuffer.allocate(sizeBuffer);
+
+            //Guardar los datos leídos del inputChannel en el bbyteBufferRead
             inputChannel.read(byteBufferRead);
             byteBufferRead.flip();//Preparar Buffer de lectura para ser leído
 
@@ -62,7 +69,6 @@ public class FileManager {
     public static void write(String outputPath,String toWrite){
         Path destPath = Paths.get(outputPath);
 
-        int sizeBuffer = 1024;
         //Definición de canales de entrada y salida de datos
         try (FileChannel outputChannel=FileChannel.open(destPath, StandardOpenOption.WRITE)){
             ByteBuffer byteBufferWrite; //Definir buffer de escritura

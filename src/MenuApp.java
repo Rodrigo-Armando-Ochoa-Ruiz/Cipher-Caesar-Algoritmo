@@ -18,8 +18,11 @@ public class MenuApp {
 
                 switch (option){
                     case 1:
+                        //Clase ReaderInputData se encarga de leer los datos de entrada
                         ReaderInputData toEncryptData =new ReaderInputData();
+                        //La clase authenticateInputData valida los datos ingresados
                         if (authenticateInputData(toEncryptData)){
+                            //Si los datos ingresados son válidos lee, encripta y escribe
                             String toEncrypt=FileManager.read(toEncryptData.getInputPath());
                             String encryptText=Cipher.encrypt(toEncrypt,toEncryptData.getKey());
                             FileManager.write(toEncryptData.getOutputPath(),encryptText);
@@ -36,7 +39,7 @@ public class MenuApp {
                         break;
 
                     case 3:
-
+                        //Lectura de datos de entrada
                         BruteForce bruteForce=new BruteForce();
                         ReaderInputData dataBruteForce=new ReaderInputData();
 
@@ -46,6 +49,7 @@ public class MenuApp {
                         System.out.println("Ingrese la ruta del archivo destino");
                         dataBruteForce.setOutputPath(scanner.nextLine());
 
+                        //Proceso de lectura de archivo, luego obtención de la clave y escritura de archivo
                         String textToDecrypt=FileManager.read(dataBruteForce.getInputPath());
                         int key= bruteForce.getKey(textToDecrypt);
                         if (key!=0){
