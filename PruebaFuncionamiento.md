@@ -17,7 +17,7 @@ Para realizar un encriptado se empleó lo siguiente:
 - **Clave para el Cifrado César:** **5**
 - **Ruta del archivo destino:** `src/toDecrypt.txt`. En esta ruta se guardará el texto encriptado.
 
-A continuación se ilustra una prueba de funcionamiento. Los datos ingresados por el usuario se muestran en un tono más claro.
+A continuación se ilustra una prueba de funcionamiento. Los datos ingresados por el usuario se muestran en líneas discontinuas.
 >Bienvenido al Encriptador
 >1. Encriptar
 >2. Desencriptar
@@ -91,7 +91,7 @@ Para realizar un desencriptado se consideraron los siguientes datos:
 - **Clave para el Cifrado César:** **5**
 - **Ruta del archivo destino:** `src/toEncrypt.txt`. En esta ruta se guardará el texto desencriptado.
 
-A continuación se ilustra una prueba de funcionamiento. Los datos ingresados por el usuario se muestran en un tono más claro.
+A continuación se ilustra una prueba de funcionamiento. Los datos ingresados por el usuario se muestran en lineas discontinuas.
 >Bienvenido al Encriptador
 >1. Encriptar
 >2. Desencriptar
@@ -152,7 +152,7 @@ Para realizar un desencriptado por fuerza bruta se consideraron los siguientes d
 - **Ruta del archivo fuente:** `src/toDecrypt.txt`. Este documento contiene el cuento encriptado de La biblioteca de Babel.
 - **Ruta del archivo destino:** `src/toEncrypt.txt`. En esta ruta se guardará el texto desencriptado.
 
-A continuación se ilustra una prueba de funcionamiento. Los datos ingresados por el usuario se muestran en un tono más claro.
+A continuación se ilustra una prueba de funcionamiento. Los datos ingresados por el usuario se muestran en lineas discontinuas.
 >Bienvenido al Encriptador
 >1. Encriptar
 >2. Desencriptar
