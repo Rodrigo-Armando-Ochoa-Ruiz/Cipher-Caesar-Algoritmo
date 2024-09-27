@@ -26,12 +26,12 @@ Para encriptar un archivo necesitas:
 3. Ingresa la ruta destino para el archivo encriptado.
 4. Proporciona la clave.
 
-Si los datos ingresados son válidos, verás el mensaje: 
+Si los datos ingresados son válidos, verás el mensaje:
 > "Datos ingresados correctamente"
 
 Si el proceso de encriptación se ha realizado con éxito, verás en pantalla:
 > "Lectura realizada con éxito"
-> 
+>
 > "Escritura realizada con éxito"
 
 Ahora puedes revisar tu archivo encriptado en la ruta de destino que ingresaste. ¡Disfruta enviando mensajes a tus amigos!
@@ -51,12 +51,12 @@ Para desencriptar un archivo necesitas:
 3. Ingresa la ruta destino para el archivo desencriptado.
 4. Proporciona la clave.
 
-Si los datos ingresados son válidos, verás el mensaje: 
+Si los datos ingresados son válidos, verás el mensaje:
 > "Datos ingresados correctamente"
 
 Si el proceso de desencriptación se ha realizado con éxito, verás en pantalla:
 > "Lectura realizada con éxito"
-> 
+>
 > "Escritura realizada con éxito"
 
 Ahora puedes revisar tu archivo desencriptado en la ruta de destino que ingresaste. ¡Lee los mensajes secretos que te han enviado tus amigos!
@@ -79,11 +79,11 @@ Para desencriptar un archivo con fuerza bruta necesitas:
 
 Si el proceso se realiza con éxito, verás en pantalla:
 > "Lectura realizada con éxito"
-> 
+>
 > "Llave encontrada: clave" (indica la clave empleada para desencriptar)
-> 
+>
 > "Escritura realizada con éxito"
-> 
+>
 > "Archivo descifrado con éxito"
 
 Ahora puedes revisar tu archivo desencriptado en la ruta de destino que ingresaste. ¡La próxima vez, asegúrate de tener la clave contigo, ya que esto puede tardar un poco!

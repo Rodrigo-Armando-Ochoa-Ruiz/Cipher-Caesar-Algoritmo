@@ -8,6 +8,19 @@ public class ReaderInputData {
     public ReaderInputData(){
 
     }
+
+    public void setInputPath(String inputPath) {
+        this.inputPath = inputPath;
+    }
+
+    public void setOutputPath(String outputPath) {
+        this.outputPath = outputPath;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
+    }
+
     public boolean isInputPathValid() {
         System.out.println("Ingrese la ruta del archivo fuente");
         String path =scanner.nextLine();
@@ -27,20 +40,18 @@ public class ReaderInputData {
     }
 
     public boolean isKeyValid(){
-        boolean isValidKey =false;
-            while (!isValidKey){
-                System.out.println("Ingrese la clave");
-                try{
-                    int key= Integer.parseInt(scanner.nextLine());
-                    if (Validator.isValidKey(key)){
-                        this.key=key;
-                        isValidKey =true;
-                    }
-                }catch (NumberFormatException e){
-                    System.out.println("Ingrese un número entero");
+        while (true){
+            System.out.println("Ingrese la clave");
+            try{
+                int key= Integer.parseInt(scanner.nextLine());
+                if (Validator.isValidKey(key)){
+                    this.key=key;
+                    return true;
                 }
+            }catch (NumberFormatException e){
+                System.out.println("Ingrese un número entero");
             }
-            return true;
+        }
     }
 
     public String getInputPath() {
