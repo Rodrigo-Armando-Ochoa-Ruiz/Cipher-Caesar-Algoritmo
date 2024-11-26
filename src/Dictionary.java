@@ -1,3 +1,7 @@
+/**
+ * Dictionary. Enum que contiene palabras clave del español para realizar el proceso de desifrado por fuerza bruta
+ * {@link BruteForce}
+ */
 public enum Dictionary {
     ANTE(" ante "),
     BAJO(" bajo "),

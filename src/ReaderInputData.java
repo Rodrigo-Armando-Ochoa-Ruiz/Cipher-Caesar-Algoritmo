@@ -1,5 +1,8 @@
 import java.util.Scanner;
 
+/**
+ * Clase ReaderInputData. Se encarga leer los datos ingresados por el usuario, almacenarlos y validarlos.
+ */
 public class ReaderInputData {
     private String inputPath;
     private String outputPath;
@@ -24,18 +27,18 @@ public class ReaderInputData {
     public boolean isInputPathValid() {
         System.out.println("Ingrese la ruta del archivo fuente");
         String path =scanner.nextLine();
+        this.inputPath= path;
         if (!Validator.isFileExists(path))
             return FileManager.createFile(path);
-        this.inputPath= path;
         return true;
     }
 
     public boolean isOutputPathValid(){
         System.out.println("Ingrese la ruta del archivo destino");
         String path = scanner.nextLine();
-        if (Validator.isFileExists(path))
-            FileManager.deleateFile(path);
         this.outputPath=path;
+        if (Validator.isFileExists(path))
+            FileManager.deleteFile(path);
         return FileManager.createFile(path);
     }
 
