@@ -8,7 +8,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
-import java.util.Optional;
 
 /**
  * Clase FileManager. Se encarga de administrar los procesos con archivos.
