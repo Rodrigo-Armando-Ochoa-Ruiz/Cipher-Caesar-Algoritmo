@@ -13,9 +13,9 @@ El orden de distribución del documento está especificado en el apartado [Funci
 ### Encriptar
 Para realizar un encriptado se empleó lo siguiente:
 
-- **Ruta del archivo fuente:** `src/toEncrypt.txt`. Este documento contiene un cuento titulado La biblioteca de Babel escrito por Jorge Luis Borges.Tiene un tamaño de 16KB. 
+- **Ruta del archivo fuente:** `files/toEncrypt.txt`. Este documento contiene un cuento titulado La biblioteca de Babel escrito por Jorge Luis Borges.Tiene un tamaño de 16KB. 
 - **Clave para el Cifrado César:** **5**
-- **Ruta del archivo destino:** `src/toDecrypt.txt`. En esta ruta se guardará el texto encriptado.
+- **Ruta del archivo destino:** `files/toDecrypt.txt`. En esta ruta se guardará el texto encriptado.
 
 A continuación se ilustra una prueba de funcionamiento. Los datos ingresados por el usuario se muestran en líneas discontinuas.
 >Bienvenido al Encriptador
@@ -28,11 +28,11 @@ A continuación se ilustra una prueba de funcionamiento. Los datos ingresados po
    > >1
 >
 >Ingrese la ruta del archivo fuente
-> >src/toEncrypt.txt
+> >files/toEncrypt.txt
 >
 >Ingrese la ruta del archivo destino
 > 
->>src/toDecrypt.txt
+>>files/toDecrypt.txt
 > 
 >Archivo creado exitosamente src\toDecrypt.txt  
 > Ingrese la clave  
@@ -87,9 +87,9 @@ Puede observarse que el archivo ha sido encriptado con éxito, en el siguiente a
 ### Desencriptar
 Para realizar un desencriptado se consideraron los siguientes datos:
 
-- **Ruta del archivo fuente:** `src/toDecrypt.txt`. Este documento contiene el cuento encriptado de La biblioteca de Babel.
+- **Ruta del archivo fuente:** `files/toDecrypt.txt`. Este documento contiene el cuento encriptado de La biblioteca de Babel.
 - **Clave para el Cifrado César:** **5**
-- **Ruta del archivo destino:** `src/toEncrypt.txt`. En esta ruta se guardará el texto desencriptado.
+- **Ruta del archivo destino:** `files/toEncrypt.txt`. En esta ruta se guardará el texto desencriptado.
 
 A continuación se ilustra una prueba de funcionamiento. Los datos ingresados por el usuario se muestran en lineas discontinuas.
 >Bienvenido al Encriptador
@@ -102,11 +102,11 @@ A continuación se ilustra una prueba de funcionamiento. Los datos ingresados po
 > >2
 >
 >Ingrese la ruta del archivo fuente
-> >src/toDecrypt.txt
+> >files/toDecrypt.txt
 >
 >Ingrese la ruta del archivo destino
 >
->>src/toEncrypt.txt
+>>files/toEncrypt.txt
 >
 >Archivo creado exitosamente src\toEncrypt.txt  
 > Ingrese la clave
@@ -149,8 +149,8 @@ Puede observarse que el archivo ha sido desencriptado con éxito, en el siguient
 ### Fuerza Bruta
 Para realizar un desencriptado por fuerza bruta se consideraron los siguientes datos:
 
-- **Ruta del archivo fuente:** `src/toDecrypt.txt`. Este documento contiene el cuento encriptado de La biblioteca de Babel.
-- **Ruta del archivo destino:** `src/toEncrypt.txt`. En esta ruta se guardará el texto desencriptado.
+- **Ruta del archivo fuente:** `files/toDecrypt.txt`. Este documento contiene el cuento encriptado de La biblioteca de Babel.
+- **Ruta del archivo destino:** `files/toEncrypt.txt`. En esta ruta se guardará el texto desencriptado.
 
 A continuación se ilustra una prueba de funcionamiento. Los datos ingresados por el usuario se muestran en lineas discontinuas.
 >Bienvenido al Encriptador
@@ -163,11 +163,11 @@ A continuación se ilustra una prueba de funcionamiento. Los datos ingresados po
 > >3
 >
 >Ingrese la ruta del archivo a desencriptar
-> >src/toDecrypt.txt
+> >files/toDecrypt.txt
 >
 >Ingrese la ruta del archivo destino
 >
->>src/toEncrypt.txt
+>>files/toEncrypt.txt
 >
 >Lectura realizada con éxito  
 > Llave encontrada: 5  
